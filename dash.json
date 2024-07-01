@@ -1,0 +1,41 @@
+[
+    {
+        "type": 1,
+        "title": "Dash",
+        "name": "Dash",
+        "description": "Dashboard for overall, web site https://dash.mauz.dev",
+        "logo": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/dashdot.png",
+        "image": "mauricenino/dashdot:latest",
+        "note": "Yacht App Templates by <a href='https://github.com/SelfhostedPro' target='_blank'>SelfhostedPro</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p>",
+        "categories": ["System Tools"],
+        "platform": "linux",
+        "restart_policy": "unless-stopped",
+        "ports": ["3333:3001/tcp"],
+        "volumes": [
+            {
+                "container": "/mnt/host:ro",
+                "bind": "!config"
+            }
+        ],
+        "env": [
+            {
+                "name": "PUID",
+                "label": "PUID",
+                "default": "!PUID",
+                "description": "for UserID"
+            },
+            {
+                "name": "PGID",
+                "label": "PGID",
+                "default": "!PGID",
+                "description": "for GroupID"
+            },
+            {
+                "name": "TZ",
+                "label": "TZ",
+                "default": "!TZ",
+                "description": "Specify a timezone to use for example Europe/Amsterdam"
+            }
+        ]
+    }
+]
